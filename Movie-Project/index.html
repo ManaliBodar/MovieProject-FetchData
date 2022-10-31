@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favourite Movie</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- for backdrop -->
+    <div id="backdrop"></div>
+
+    <!-- for model -->
+    <div class="model card" id="add-model">
+      <div class="model_content">
+        <label for="title">Movie Title</label>
+        <input type="text" name="title" id="title" />
+        <label for="image-url">Image URL</label>
+        <input type="text" name="image-url" id="image-url" />
+        <label for="rating">Your Rating</label>
+        <input
+          type="number"
+          name="rating"
+          id="rating"
+          min="1"
+          max="5"
+          step="1"
+        />
+      </div>
+
+      <!-- for model actions -->
+      <div class="model_actions">
+        <button class="btn btn--passive">Cancel</button>
+        <button class="btn btn-success">Add</button>
+      </div>
+    </div>
+
+    <!-- for deleting model -->
+    <div class="model card" id="delete-model">
+      <h2 class="model_title">Are you Sure?</h2>
+      <p class="model_content">
+        Are you sure you want to delete this item?This action can't be made
+        undone!
+      </p>
+
+      <div class="model_actions">
+        <button class="btn btn--passive">No (Cancel)</button>
+        <button class="btn btn--danger">Yes</button>
+      </div>
+    </div>
+    <!-- for header -->
+
+    <header>
+      <h1>Favorite Movie</h1>
+      <button>ADD MOVIE</button>
+    </header>
+
+    <!-- main section -->
+    <main>
+      <section id="entry-text" class="card">
+        <p>Your Personal movie database!</p>
+      </section>
+      <ul id="movie-list" class="movie-list"></ul>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

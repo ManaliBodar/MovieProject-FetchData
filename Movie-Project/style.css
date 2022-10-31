@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  /* display: flex;
+    align-items: center;
+    justify-content: center; */
+  font-family: "Roboto", sans-serif;
+}
+
+/* ----------------for header------------- */
+header {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00329e;
+  padding: 0 2.5rem;
+}
+
+header h1 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+
+header button {
+  background-color: #f67722;
+  color: white;
+  font-family: inherit;
+  border: none;
+  border: 1px solid #f67722;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+  font-weight: bold;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* --------------button hover and active----------------  */
+header button:hover,
+header button:active {
+  background-color: #f3cc4b;
+  border-color: #f3cc4b;
+  color: #995200;
+}
+
+/* ----------------------for model labels--------------- */
+label {
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: #464646;
+}
+
+/* ------------------for model input---------------- */
+input {
+  border: 1px solid #ccc;
+  padding: 0.4rem 0.2rem;
+  color: #383838;
+}
+
+input:focus {
+  outline: none;
+  background-color: #fff1c4;
+}
+
+/*-------------------------for button----------------*/
+.btn {
+  font-family: inherit;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #00329e;
+  background-color: #00329e;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #f67722;
+  border-color: #f67722;
+}
+
+.btn--passive {
+  color: #00329e;
+  background-color: transparent;
+  border: none;
+  box-sizing: none;
+}
+
+.btn--passive:hover,
+.btn--passive:active {
+  background-color: #aec6f8;
+}
+
+.btn--danger {
+  background-color: #d30808;
+  color: white;
+  border-color: #d30808;
+}
+
+.btn--danger:active,
+.btn--danger:hover {
+  background-color: #ff3217;
+  border-color: #ff3217;
+}
+
+/* ------------------------for model --------------------- */
+.model {
+  position: fixed;
+  top: 38vh;
+  left: 10%;
+  z-index: 100;
+  background-color: white;
+  border-radius: 10px;
+  width: 80%;
+  display: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.model.visible {
+  display: block;
+  animation: fade-slide-in 0.3s ease-out forwards;
+}
+
+.model .model_title {
+  margin: 0;
+  padding: 1rem;
+  border-bottom: 1px solid #00329e;
+  background-color: #00329e;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.model .model_content {
+  padding: 1rem;
+}
+
+.model .model_actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* -------for movie element----------- */
+.movie-element {
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+  display: flex;
+}
+
+.movie-element h2,
+.movie-element p {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.movie-element p {
+  color: white;
+  display: inline;
+  background-color: #f67722;
+  padding: 0.25rem 1rem;
+  border-radius: 15px;
+}
+
+.movie-element h2 {
+  color: #383838;
+  margin-bottom: 1rem;
+}
+
+/* ----for movie image-------------- */
+.movie-element_image {
+  flex: 1;
+  border-radius: 10px 0 0 10px;
+  overflow: hidden;
+}
+
+.movie-element_image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.movie-element_info {
+  flex: 2;
+  padding: 1rem;
+}
+
+/* ------------------for card------------------ */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+#entry-text {
+  width: 40rem;
+  margin: 2rem auto;
+  max-width: 80%;
+  padding: 1rem;
+}
+
+#entry-text p {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* ----------for movie list --------------*/
+#movie-list {
+  list-style: none;
+  width: 40rem;
+  max-width: 90%;
+  margin: 1rem auto;
+  padding: 0;
+}
+
+/* -------------for backdrop ------------ */
+
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#backdrop.visible {
+  pointer-events: all;
+  display: block;
+}
+
+/* for add model and model content */
+#add-model .model_content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* -------animation fade-slide for model------ */
+@keyframes fade-slide-in {
+  from {
+    transform: translateY(-5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* media query for min-width */
+@media (min-width: 768px) {
+  .modal {
+    width: 40rem;
+    left: calc(50% - 20rem);
+  }
+}
